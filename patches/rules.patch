@@ -1,30 +1,26 @@
 --- a/debian/rules
 +++ b/debian/rules
-@@ -1,27 +1,26 @@
+@@ -1,24 +1,23 @@
  #!/usr/bin/make -f
 -export SRCTOP=providers/tpm2
  
  %:
 -	dh $@ --sourcedirectory=$(SRCTOP)
-+	dh $@
++	dh $@ 
  
  override_dh_auto_clean:
 -	python3 $(SRCTOP)/manage.py clean
 +	python3 manage.py clean
  
- override_dh_auto_configure:
--	cd $(SRCTOP)/src && autoreconf -i
-+	cd src && autoreconf -i
- 
  override_dh_auto_build:
 -	python3 $(SRCTOP)/manage.py build
--	python3 $(SRCTOP)/manage.py i18n --dont-update-pot --dont-merge-po
+-	python3 $(SRCTOP)/manage.py i18n
 +	python3 manage.py build
-+	python3 manage.py i18n --dont-update-pot --dont-merge-po
++	python3 manage.py i18n
  
  override_dh_auto_test:
--	python3 $(SRCTOP)/manage.py validate 
-+	python3 manage.py validate 
+-	python3 $(SRCTOP)/manage.py validate
++	python3 manage.py validate
  
  override_dh_auto_install:
 -	python3 $(SRCTOP)/manage.py install \
