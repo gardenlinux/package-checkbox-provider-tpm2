@@ -11,4 +11,4 @@ jobs:
       build_dep: |
         gardenlinux/package-checkbox-base 2.8gl0
         gardenlinux/package-checkbox-provider-resource 2.8gl0
-        gardenlinux/package-checkbox-provider-support 2.8gl0
+        gardenlinux/package-checkbox-support 2.8gl0
