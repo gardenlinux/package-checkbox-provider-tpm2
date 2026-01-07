@@ -8,4 +8,6 @@ jobs:
     uses: gardenlinux/package-build/.github/workflows/build.yml@main
     with:
       release: ${{ github.ref == 'refs/heads/main' }}
-      build_dep: gardenlinux/package-checkbox-ng 2.8gl0
+      build_dep: |
+        gardenlinux/package-checkbox-ng 2.8gl0
+        gardenlinux/package-checkbox-provider-resource 2.8gl0
